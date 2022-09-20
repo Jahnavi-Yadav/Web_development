@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+</head>
+<body>
+    <h3><b>Registration Form-</b></h3>
+    <form id="myform">
+        <label for="user">Username:</label>
+        <input type="text" name="user" id="username"><br><br>
+
+        <label for="roll">Roll no:</label>
+        <input type="text" name="roll" id="rollno"><br><br>
+
+        <label for="mail">Email id:</label>
+        <input type="text" name="mail" id="emailid"><br><br>
+        <label for="gender">Gender:</label>
+        <br>
+
+        <input type="radio" name="gender" value="male">Male 
+        <input type="radio" name="gender" value="female">Female 
+        <br><br>
+
+
+
+        <label for="subjects">Choose your core papers:</label><br>
+        <input type="checkbox" name="subjects" value="it" id="sub">Internet technologies<br>
+         <input type="checkbox" name="subjects" value="sp" id="sub">System programming<br>
+        <input type="checkbox" name="subjects" value="mp" id="sub">Micro processor<br>
+        <input type="checkbox" name="subjects" value="toc" id="sub">Theory of Computation<br>
+        <br><br>
+        <br>
+    
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" ></script>
+    <script>
+        $(document).ready(function(){
+        $('#myform').click(function(){
+            
+            
+         var a=$('#username').val();
+         var b=$('#rollno').val();
+         var c=$('#emailid').val();
+         var arr=[];
+         $("input[type='checkbox']:checked").
+         each(
+            function(){
+
+                arr.push($(this).val());
+            }
+         );
+         var arr2=[];
+         $("input[type='radio']:checked").
+         each(
+            function(){
+
+                arr2.push($(this).val());
+            }
+         );
+         function student(username,rollno,emailid,arr2,arr)
+         {
+            this.username=a;
+            this.rollno=b;
+            this.emailid=c;
+            this.arr2=arr2;
+            this.arr=arr;
+         }
+         var stu1=new student(a,b,c,arr2,arr);
+         console.log(stu1)
+        });
+    });
+
+         
+     
+     </script>
+        
+</body>
+</html>
